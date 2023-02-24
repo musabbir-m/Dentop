@@ -1,3 +1,9 @@
 .custom-div{
-    backgroundImage: {`url("https://img.freepik.com/free-photo/woman-patient-dentist_1303-9355.jpg?w=740&t=st=1677207370~exp=1677207970~hmac=6944c650922ea7d29d0ec1f1b532e1208239c6c87c10759595eada98926093f8")`}
+    background-image: url("https://img.freepik.com/free-photo/woman-patient-dentist_1303-9355.jpg?w=740&t=st=1677207370~exp=1677207970~hmac=6944c650922ea7d29d0ec1f1b532e1208239c6c87c10759595eada98926093f8") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+.custom-div img {
+    
 }
