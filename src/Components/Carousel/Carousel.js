@@ -4,7 +4,7 @@ import "./Carousel.css";
 
 const Carousel = () => {
   return (
-    <div className=" min-h-screen  custom-div">
+    <div className=" min-h-screen   custom-div">
       <div className=" text-center flex pt-48 pl-10 text-black  ">
         <div className="max-w-md ">
           <h1 className="mb-5 text-3xl lg:text-6xl  font-bold">Let Us Brighten Your Smile</h1>
