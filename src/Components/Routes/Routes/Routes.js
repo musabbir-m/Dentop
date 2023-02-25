@@ -4,6 +4,7 @@ import Main from '../../../Layout/Main';
 import Allservices from '../../Allservices/Allservices';
 import Home from '../../Home/Home';
 import Login from '../../Login/Login';
+import Servicedetail from '../../ServiceDetail/Servicedetail';
 import Services from '../../Services/Services';
 import Signup from '../../Signup/Signup';
 
@@ -27,6 +28,13 @@ const routes= createBrowserRouter([
                 loader: async()=> {
                     return fetch('http://localhost:5000/allservices')
                 }
+
+            },
+            {
+                path: '/dentalservice/:id',
+                element: <Servicedetail></Servicedetail>,
+                loader: async({params})=>  fetch(`http://localhost:5000/dentalservice/${params.id}`)
+                
 
             },
             {
