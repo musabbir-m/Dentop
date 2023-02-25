@@ -27,18 +27,18 @@ const Activities = () => {
             <div>
               <RiRemoteControl2Fill className="text-6xl my-3"></RiRemoteControl2Fill>
 
-              <p className="text-2xl">Quality controll system</p>
+              <p className="text-2xl">Quality controll <br /> system</p>
 
               <p className="text-sm pt-5">
-                Lorem ipsum, dolor sit amet consectetur <br /> adipisicing elit.{" "}
-                Esse ratione cumque ipsum <br /> nemo repellendus ad ex sed{" "}
+                Lorem ipsum, dolor sit amet <br /> consectetur  adipisicing elit.{" "}
+                <br /> Esse ratione cumque ipsum <br /> nemo repellendus ad ex sed{" "}
                 <br />
               </p>
             </div>
             <div>
               <TbHeartHandshake className="text-6xl my-3"></TbHeartHandshake>
 
-              <p className="text-2xl">Quality controll system</p>
+              <p className="text-2xl">Highly Professional <br /> Stuff</p>
 
               <p className="text-sm pt-5">
                 Lorem ipsum, dolor sit amet <br /> consectetur adipisicing elit.{" "}
@@ -47,7 +47,7 @@ const Activities = () => {
               </p>
             </div>
           </div>
-          <button className=" mx-auto bg-cyan-400 rounded-md px-4 py-4 text-xl font-semibold text-white" >Get Appointment</button>
+          <button className=" mx-auto mt-5 mb-5 bg-cyan-400 rounded-md px-4 py-4 text-xl font-semibold text-white" >Get Appointment</button>
         </div>
       </div>
     </div>
