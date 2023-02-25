@@ -7,7 +7,7 @@ const Allservices = () => {
   const allservices = useLoaderData();
   return (
     <div>
-      <div className="bg-[url('https://www.shutterstock.com/image-photo/white-healthy-tooth-different-tools-260nw-1069579256.jpg')] bg-cover h-96  bg-no-repeat  ">
+      <div className="bg-[url('https://i.ibb.co/8mskX0K/all-Service.webp')] bg-cover h-96  bg-no-repeat  ">
 
         <h2 className="pl-20 pt-36 text-2xl font-bold">
         <AiOutlineSolution className="inline"></AiOutlineSolution> Services 
