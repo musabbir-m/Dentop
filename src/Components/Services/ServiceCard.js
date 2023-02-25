@@ -4,7 +4,7 @@ import { BsArrowRightShort } from "react-icons/bs";
 const ServiceCard = ({ service }) => {
   const { img, name, description } = service;
   return (
-    <div className="relative p-6 shadow-sm mx-auto max-w-sm ">
+    <div className="relative p-6 shadow-sm mx-auto max-w-sm mb-36">
       <div className="">
         <img
           className="w-72 h-auto mx-auto rounded-lg hover:scale-110 ease-in duration-200"

@@ -7,7 +7,7 @@ import Services from '../Services/Services';
 const Home = () => {
     return (
         <div>
-            <Navbar></Navbar>
+           
             <Carousel></Carousel>
             <Activities></Activities>
             <Services></Services>
