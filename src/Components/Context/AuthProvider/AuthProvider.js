@@ -45,7 +45,7 @@ const AuthProvider = ({ children }) => {
 
 // 
 const updateUser= (userInfo)=> {
-    return updateProfile(user, userInfo)
+    return updateProfile(auth.currentUser, userInfo)
 }
 
   //User state
@@ -59,11 +59,11 @@ const updateUser= (userInfo)=> {
         })
 
         return ()=> unsubscribe()
-    }
+    },[]
   )
 
 const authInfo= {
-    signUp, logIn, googleSignIn, logOut, user, updateUser
+    signUp, logIn, googleSignIn, logOut, user, updateUser, loading
 }
 
   return <AuthContext.Provider value={authInfo} >{children}</AuthContext.Provider>

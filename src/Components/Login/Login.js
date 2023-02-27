@@ -2,12 +2,17 @@ import React, { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import { AuthContext } from "../Context/AuthProvider/AuthProvider";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const { user, signUp, logIn, googleSignIn } = useContext(AuthContext);
+  const {  logIn, googleSignIn } = useContext(AuthContext);
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+  //navigate to right route
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   //email password login
   const handleLogin = (event) => {
@@ -23,6 +28,7 @@ const Login = () => {
         setError("");
         setSuccess(true);
         form.reset();
+        navigate(from, { replace: true });
        
       })
       .catch((err) => {
@@ -86,12 +92,13 @@ const Login = () => {
                 className=" px-5 py-2 bg-gray-100 border-r-4 rounded border-cyan-600"
               />
               <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
+                <Link className="label-text-alt link link-hover">
                   Forgot password?
-                </a>
+                </Link>
               </label>
             </div>
             <div className="form-control mt-6">
+              <p className="text-sm mb-2">Don't have an account? <Link className="link text-cyan-600 font-semibold" to='/signup'>Sign up</Link> </p>
             <p className="text-red-500">{error}</p>
                 {success && (
                   <p className="text-success p-2">logged in successfully</p>
