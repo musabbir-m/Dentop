@@ -22,12 +22,12 @@ const Services = () => {
 
       
 
-      <div className="grid grid-cols-3 gap-3 mb-16">
+      <div className="grid grid-cols-3 gap-3 mb-10">
         {services?.map((service) => (
           <ServiceCard key={service._id}  service={service}></ServiceCard>
         ))}
       </div>
-      <Link to="/allservices"><button className=" text-xl text-white mt-28 bg-cyan-500 px-10 py-3 ">See All <BsArrowRightCircle className="inline"></BsArrowRightCircle> </button></Link>
+      <Link to="/allservices"><button className=" text-xl text-white  bg-cyan-500 px-10 py-3 ">See All <BsArrowRightCircle className="inline"></BsArrowRightCircle> </button></Link>
     </div>
   );
 };

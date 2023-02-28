@@ -86,7 +86,7 @@ const Login = () => {
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="text"
+                type="password"
                 name="password"
                 placeholder="password"
                 className=" px-5 py-2 bg-gray-100 border-r-4 rounded border-cyan-600"

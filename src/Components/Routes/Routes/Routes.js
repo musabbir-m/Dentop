@@ -32,9 +32,9 @@ const routes= createBrowserRouter([
 
             },
             {
-                path: '/dentalservice/:id',
+                path: '/service/:name',
                 element: <Servicedetail></Servicedetail>,
-                loader: async({params})=>  fetch(`http://localhost:5000/dentalservice/${params.id}`)
+                loader:  ({params})=>  fetch(`http://localhost:5000/services/${params.name}`),
                 
 
             },
