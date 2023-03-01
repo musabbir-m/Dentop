@@ -28,6 +28,34 @@ const Navbar = () => {
         {" "}
         <Link to="">Contact</Link>{" "}
       </li>
+      {user?.uid ? (
+          <>
+            <li>
+            <Link className="font-semibold" to="/addservice">
+              Add service
+            </Link>
+            </li>
+            <li>
+            <Link className="font-semibold" to="/myreview">
+              My review
+            </Link>
+            </li>
+                     
+            <FaUserCircle className="text-2xl"></FaUserCircle>{" "}
+            <li
+              onClick={logOutHandler}
+              className="btn btn-xs mr-3 lg:y-2 px-3 font-semibold hover:text-cyan-400 "
+            >
+              {" "}
+              logout
+            </li>
+          </>
+        ) : (
+          <Link className="mr-5 text-lg font-semibold" to="/login">
+            Login
+          </Link>
+        )}
+
     </React.Fragment>
   );
   return (
@@ -79,7 +107,7 @@ const Navbar = () => {
         <ul className="menu  menu-horizontal px-1">{navItem}</ul>
       </div>
       <div className="navbar-end  ">
-        {user && (
+        {/* {user && (
           <>
             {" "}
             <FaUserCircle className="text-2xl"></FaUserCircle>{" "}
@@ -91,10 +119,10 @@ const Navbar = () => {
               logout
             </li>
           </>
-        )}
-        {user?.uid ? <li></li> : <Link className="mr-5 text-lg font-semibold" to='/login'>Login</Link>}
+        )} */}
+       
 
-        <Link className="btn bg-cyan-400 border-none mr-6 hidden lg:flex">
+        <Link className="btn  bg-cyan-400 border-none mr-6 hidden lg:flex">
           Get Appointment
         </Link>
       </div>
