@@ -11,7 +11,7 @@ const MyReview = () => {
     console.log(myReviews);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myreviews?email=${email}`)
+        fetch(`https://dentop-server.vercel.app/myreviews?email=${email}`)
           .then((res) => res.json())
           .then((data) => setMyreviews(data));
       }, [email]);
@@ -23,7 +23,7 @@ const MyReview = () => {
         );
     
         if (proceed) {
-          fetch(`http://localhost:5000/review/${id}`, {
+          fetch(`https://dentop-server.vercel.app/review/${id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())
@@ -40,7 +40,7 @@ const MyReview = () => {
       // handle update review
     
       const handleReviewUpdate = (id, text) => {
-        fetch(`http://localhost:5000/review/${id}`, {
+        fetch(`https://dentop-server.vercel.app/review/${id}`, {
           method: "PATCH",
           headers: {
             "content-type": "application/json",

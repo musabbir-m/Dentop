@@ -17,7 +17,7 @@ const Servicedetail = () => {
   //load review
 
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews?name=${name}`)
+    fetch(`https://dentop-server.vercel.app/reviews?name=${name}`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, [acknowledged]);
@@ -44,7 +44,7 @@ const Servicedetail = () => {
     };
 
     fetch(
-      "http://localhost:5000/review",
+      "https://dentop-server.vercel.app/review",
 
       {
         method: "POST",
@@ -62,7 +62,7 @@ const Servicedetail = () => {
           setAcknowledged(true);
           event.target.reset();
           //   reload review when a new review added
-          fetch(`http://localhost:5000/reviews?name=${name}`)
+          fetch(`https://dentop-server.vercel.app/reviews?name=${name}`)
             .then((res) => res.json())
             .then((data) => setReviews(data));
         }

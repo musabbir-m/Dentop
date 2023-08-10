@@ -29,14 +29,14 @@ const routes= createBrowserRouter([
                 path: '/allservices',
                 element: <PrivateRoute><Allservices></Allservices></PrivateRoute>,
                 loader: async()=> {
-                    return fetch('http://localhost:5000/allservices')
+                    return fetch('https://dentop-server.vercel.app/allservices')
                 }
 
             },
             {
                 path: '/service/:name',
                 element: <Servicedetail></Servicedetail>,
-                loader:  ({params})=>  fetch(`http://localhost:5000/services/${params.name}`),
+                loader:  ({params})=>  fetch(`https://dentop-server.vercel.app/services/${params.name}`),
                 
 
             },
