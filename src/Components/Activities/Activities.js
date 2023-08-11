@@ -9,7 +9,7 @@ const Activities = () => {
         <img
           className=" max-h-[500px] w-auto"
           height=""
-          src="https://thumbs.dreamstime.com/b/male-dentist-doctor-dental-clinic-portrait-male-dentist-doctor-dental-clinic-portrait-happy-dentistry-doctor-wearing-115999735.jpg"
+          src="https://i.ibb.co/55SFS7Y/Dentist-1.jpg"
           alt=""
         />
       </div>
