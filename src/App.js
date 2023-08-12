@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
-import Carousel from './Components/Carousel/Carousel';
+import Carousel from './Components/Home/Carousel/Carousel';
 import Home from './Components/Home/Home';
 import { RouterProvider } from 'react-router-dom';
 import routes from './Components/Routes/Routes/Routes';

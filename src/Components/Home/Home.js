@@ -1,9 +1,9 @@
 import React from 'react';
-import Activities from '../Activities/Activities';
-import Carousel from '../Carousel/Carousel';
+import Activities from './Activities/Activities';
+import Carousel from './Carousel/Carousel';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
-import Services from '../Services/Services';
+import Services from './Services/Services';
 
 const Home = () => {
     return (

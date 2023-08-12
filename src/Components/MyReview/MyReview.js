@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../Context/AuthProvider/AuthProvider';
+
 import MyReviewCard from './MyReviewCard/MyReviewCard';
+import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 
 const MyReview = () => {
     const {user}= useContext(AuthContext)

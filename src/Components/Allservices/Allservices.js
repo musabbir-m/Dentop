@@ -1,6 +1,6 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
-import ServiceCard from "../Services/ServiceCard";
+import ServiceCard from "../Home/Services/ServiceCard";
 import { AiOutlineSolution } from "react-icons/ai";
 
 const Allservices = () => {

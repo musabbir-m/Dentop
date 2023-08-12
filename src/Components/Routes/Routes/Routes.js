@@ -6,9 +6,9 @@ import Allservices from '../../Allservices/Allservices';
 import Home from '../../Home/Home';
 import Login from '../../Login/Login';
 import MyReview from '../../MyReview/MyReview';
-import PrivateRoute from '../../PrivateRoute/PrivateRoute';
+import PrivateRoute from '../PrivateRoute/PrivateRoute';
 import Servicedetail from '../../ServiceDetail/Servicedetail';
-import Services from '../../Services/Services';
+import Services from '../../Home/Services/Services';
 import Signup from '../../Signup/Signup';
 
 const routes= createBrowserRouter([

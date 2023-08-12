@@ -2,8 +2,8 @@ import React, { useContext, useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
-import { AuthContext } from "../Context/AuthProvider/AuthProvider";
 import { toast } from "react-hot-toast";
+import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 
 const Signup = () => {
   const {  signUp, googleSignIn, updateUser} = useContext(AuthContext);

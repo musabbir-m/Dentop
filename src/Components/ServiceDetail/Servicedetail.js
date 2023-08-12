@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { Link, Navigate, useLoaderData, useLocation } from "react-router-dom";
-import { AuthContext } from "../Context/AuthProvider/AuthProvider";
 import ReviewCard from "../ReviewCard/ReviewCard";
+import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 
 const Servicedetail = () => {
   const service = useLoaderData();

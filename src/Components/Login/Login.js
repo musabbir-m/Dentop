@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
-import { AuthContext } from "../Context/AuthProvider/AuthProvider";
+
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 
 const Login = () => {
   const {  logIn, googleSignIn } = useContext(AuthContext);

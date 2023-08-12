@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../Context/AuthProvider/AuthProvider";
 import { FaUserCircle } from "react-icons/fa";
+import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
