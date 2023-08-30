@@ -4,7 +4,7 @@ import { TbHeartHandshake } from "react-icons/tb";
 
 const Activities = () => {
   return (
-    <div className="-mt-10 h-  lg:flex justify-around  mb-32 bg-slate-100 mx-10 shadow-md rounded-md ">
+    <div className="{-mt-10}   lg:flex justify-around  mb-32 bg-slate-100 mx-10 shadow-md rounded-md ">
       <div className=" overflow-hidden  pt-12 ">
         <img
           className=" max-h-[500px] w-auto"
@@ -16,7 +16,7 @@ const Activities = () => {
 
       <div className="pt-10 px-5 mx-2">
         <h3 className="text-xl font-semibold text-cyan-400">WHAT WE DO</h3>
-        <h2 className="text-5xl font-semibold mt-5">
+        <h2 className="text-3xl md:text-4xl font-semibold mt-5">
           True Healthcare For <br />
           Your Family
         </h2>

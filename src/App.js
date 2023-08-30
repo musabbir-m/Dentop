@@ -1,11 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
-import Navbar from './Components/Navbar/Navbar';
-import Carousel from './Components/Home/Carousel/Carousel';
-import Home from './Components/Home/Home';
+import Navbar from './Component/Navbar/Navbar';
+import Carousel from '../src/pages/Home/Carousel/Carousel';
+import Home from './pages/Home/Home';
 import { RouterProvider } from 'react-router-dom';
-import routes from './Components/Routes/Routes/Routes';
 import { Toaster } from 'react-hot-toast';
+import routes from './Routes/Routes';
 
 function App() {
   return (

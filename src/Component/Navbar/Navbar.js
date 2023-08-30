@@ -30,7 +30,7 @@ const Navbar = () => {
       </li>
       {user?.uid ? (
           <>
-            <li>
+            {/* <li>
             <Link className="font-semibold" to="/addservice">
               Add service
             </Link>
@@ -39,19 +39,19 @@ const Navbar = () => {
             <Link className="font-semibold" to="/myreview">
               My review
             </Link>
-            </li>
+            </li> */}
                      
-            <FaUserCircle className="text-2xl"></FaUserCircle>{" "}
+            {/* <FaUserCircle className="text-2xl mt-3"></FaUserCircle>{" "} */}
             <li
               onClick={logOutHandler}
-              className="btn btn-xs mr-3 lg:y-2 px-3 font-semibold hover:text-cyan-400 "
+              className="btn btn-xs  mt-3 lg:y-2 px-3 font-semibold hover:text-cyan-400 "
             >
               {" "}
               logout
             </li>
           </>
         ) : (
-          <Link className="mr-5 text-lg font-semibold" to="/login">
+          <Link className="mr-5 mt-2 py-1 px-2 text-lg text-white font-semibold bg-blue-400 rounded-full" to="/login">
             Login
           </Link>
         )}
@@ -85,7 +85,7 @@ const Navbar = () => {
             {navItem}
             <li>
               {" "}
-              <Link className=" font-semibold bg-cyan-400 border-none mr-6">
+              <Link className=" font-semibold bg-blue-400 border-none mr-6">
                 Get Appointment
               </Link>
             </li>
@@ -97,16 +97,16 @@ const Navbar = () => {
                 logout
               </li>
             )}
-            {user?.uid ? <li></li> : <li>Login</li>}
+            {/* {user?.uid ? <li></li> : <li>Login</li>} */}
           </ul>
         </div>
-        <img className="rounded-full" src="logo1.png" width="50px" alt="logo" />
-        <Link className="btn btn-ghost normal-case text-xl -ml-2">Dentop</Link>
+        <img className="rounded-full" src="logo.jpg" width="50px" alt="logo" />
+        <Link className=" normal-case text-xl italic font-mono ">Dentop</Link>
       </div>
-      <div className="navbar-center hidden lg:flex">
+      <div className="navbar-end hidden lg:flex">
         <ul className="menu  menu-horizontal px-1">{navItem}</ul>
       </div>
-      <div className="navbar-end  ">
+      <div className="navbar-en  ">
         {/* {user && (
           <>
             {" "}
@@ -122,9 +122,9 @@ const Navbar = () => {
         )} */}
        
 
-        <Link className="btn  bg-cyan-400 border-none mr-6 hidden lg:flex">
+        {/* <Link className="btn  bg-blue-400 border-none mr-6 hidden lg:flex">
           Get Appointment
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

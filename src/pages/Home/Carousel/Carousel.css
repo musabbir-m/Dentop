@@ -1,0 +1,21 @@
+.custom-div{
+    position: relative;
+    background-image: url("https://img.freepik.com/premium-photo/young-female-patient-with-open-mouth-examining-dental-inspection-dentist-office_358354-10484.jpg?w=740") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+   
+}
+.overlay {
+    position: absolute;
+    top: o;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(93, 93, 95, 0.3);
+    
+}
+
+/* https://img.freepik.com/free-photo/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture_409827-254.jpg?w=740&t=st=1693383578~exp=1693384178~hmac=776176f25421da1f3f9eb4172867fdfe0d26e077444d623f5a4ce9cd1acd6657
+
+https://img.freepik.com/free-photo/woman-patient-dentist_1303-9355.jpg?w=740&t=st=1677207370~exp=1677207970~hmac=6944c650922ea7d29d0ec1f1b532e1208239c6c87c10759595eada98926093f8 */

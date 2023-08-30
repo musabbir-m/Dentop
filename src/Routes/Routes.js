@@ -1,15 +1,19 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import Main from '../../../Layout/Main';
-import AddService from '../../AddService/AddService';
-import Allservices from '../../Allservices/Allservices';
-import Home from '../../Home/Home';
-import Login from '../../Login/Login';
-import MyReview from '../../MyReview/MyReview';
-import PrivateRoute from '../PrivateRoute/PrivateRoute';
-import Servicedetail from '../../ServiceDetail/Servicedetail';
-import Services from '../../Home/Services/Services';
-import Signup from '../../Signup/Signup';
+import Main from '../Layout/Main';
+import Home from '../pages/Home/Home';
+import Services from '../pages/Home/Services/Services';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
+import AddService from '../pages/AddService/AddService';
+import Allservices from '../pages/Allservices/Allservices';
+// import Home from '../../Home/Home';
+// import Login from '../../Login/Login';
+import MyReview from '../pages/MyReview/MyReview';
+// import PrivateRoute from '../PrivateRoute/PrivateRoute';
+import Servicedetail from '../pages/Allservices/ServiceDetail/Servicedetail';
+import Login from '../pages/Login/Login';
+// import Services from '../../Home/Services/Services';
+import Signup from '../pages/Signup/Signup';
 
 const routes= createBrowserRouter([
        {
@@ -27,7 +31,7 @@ const routes= createBrowserRouter([
             {
 
                 path: '/allservices',
-                element: <PrivateRoute><Allservices></Allservices></PrivateRoute>,
+                element: <PrivateRoute><Allservices/></PrivateRoute>,
                 loader: async()=> {
                     return fetch('https://dentop-server.vercel.app/allservices')
                 }
