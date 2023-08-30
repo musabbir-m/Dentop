@@ -1,22 +1,63 @@
 import React from "react";
 import "./Carousel.css";
+import CarouselItem from "./CarouselItem";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import CarouselItem2 from "./CarouselItem2";
 
 const Carousel = () => {
-  return (
-    <div className=" h-[500px] bg-[url('https://i.ibb.co/XJX84jp/all-Service.jpg')] pb-24 custom-div">
-      <div className=" overlay text-center  pt-48 md:pl-10  ">
-        <div className="max-w-md ">
-          <h1 className="mb-5 text-3xl lg:text-5xl text-blue-600 italic  font-bold">Let's Brighten Your Smile</h1>
-          <p className="mb-5 font-semibold text-xl text-gray-100">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
-          {/* <button className="btn bg-cyan-400 border-none">Who We Are</button> */}
-        </div>
-        
-      </div>
+  const settings = {
+    dots: false,
+    fade:true,
+    infinite: true,
+    speed: 800,
+    slidesToScroll: 1,
+    slidesToShow: 1,
+
+    autoplay: true,
+    autoplaySpeed: 2500,
+    pauseOnHover: false,
+
+    prevArrow:null,
+    nextArrow:null,
+   
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          initialSlide: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+  return (    
+    <div className=" ">
+      <Slider {...settings} className="overflow-hidden">
+        <CarouselItem/>
+        <CarouselItem2/>
+      </Slider>
     </div>
+      
   );
 };
 
