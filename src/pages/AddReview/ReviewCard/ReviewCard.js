@@ -4,7 +4,7 @@ const ReviewCard = ({review}) => {
 
     const {serviceName, photoURL, reviewText, customer}= review
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card max-w-96 bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">{serviceName}</h2>
           <p>{reviewText}</p>

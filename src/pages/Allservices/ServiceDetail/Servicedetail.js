@@ -71,24 +71,28 @@ const Servicedetail = () => {
   };
 
   return (
-    <div className="mx-4">
+    <div className="">
       {/* service details */}
-      <div className="card lg:c bg-base-100 shadow-xl">
-        <figure>
-          <img className="w-2/3" src={img} alt="Album" />
-        </figure>
-        <div className="card-body px-6">
-          <h2 className="card-title text-emerald-400	">{name}</h2>
-          <p>{description}</p>
-          <div className="card-actions justify-end">
-            <p className="font-bold ">
-              {" "}
-              <span className="text-purple-600">Level: </span> {}
-            </p>
-            <p className="font-bold">
-              {" "}
-              <span className="text-purple-600">Price:</span> $ {}
-            </p>
+      <div className=" px-4 py-6 bg-base-100 shadow-xl">
+        
+       <div className="flex flex-col lg:flex-row">
+          <div className="max-w-96">
+          <img className="w-full rounded-lg" src={img} alt="Album" />
+          </div>
+       
+          <div className="card-body px-6">
+            <h2 className="card-title text-emerald-400	">{name}</h2>
+            <p>{description}</p>
+            <div className="card-actions justify-end">
+              <p className="font-bold ">
+                {" "}
+                <span className="text-purple-600">Level: </span> {}
+              </p>
+              <p className="font-bold">
+                {" "}
+                <span className="text-purple-600">Price:</span> $ {}
+              </p>
+            </div>
           </div>
         </div>
         {/* show all review  */}
