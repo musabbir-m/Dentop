@@ -14,6 +14,7 @@ import Servicedetail from '../pages/Allservices/ServiceDetail/Servicedetail';
 import Login from '../pages/Login/Login';
 // import Services from '../../Home/Services/Services';
 import Signup from '../pages/Signup/Signup';
+import Appointments from '../pages/Appoinments/Appointments';
 
 const routes= createBrowserRouter([
        {
@@ -59,6 +60,10 @@ const routes= createBrowserRouter([
             {
                 path: '/addservice',
                 element: <AddService></AddService>
+            },
+            {
+                path: '/appointment',
+                element: <Appointments></Appointments>
             }
         ]
        }
