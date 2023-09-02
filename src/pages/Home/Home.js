@@ -5,6 +5,7 @@ import Footer from '../../Component/Footer/Footer';
 import Navbar from '../../Component/Navbar/Navbar';
 import Services from './Services/Services';
 import Stats from './Stats/Stats';
+import BookAppointment from './BookAppointment/BookAppointment';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <Activities></Activities>
             <Services></Services>
             <Stats></Stats>
+            <BookAppointment></BookAppointment>
             
             
         </div>
