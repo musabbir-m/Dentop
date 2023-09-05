@@ -15,11 +15,13 @@ import Login from '../pages/Login/Login';
 // import Services from '../../Home/Services/Services';
 import Signup from '../pages/Signup/Signup';
 import Appointments from '../pages/Appoinments/Appointments';
+import ErrorComp from '../Component/ErrorComp';
 
 const routes= createBrowserRouter([
        {
         path: '/',
         element: <Main></Main>,
+        errorElement:<ErrorComp/>,
         children: [
             {
                 path: '/',

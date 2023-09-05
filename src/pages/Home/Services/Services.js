@@ -22,11 +22,16 @@ const Services = () => {
 
       
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-10">
-        {services?.map((service) => (
+      {
+        services.length===0? <div className="w-10 h-10 rounded-full border-blue-800 my-4 border-t-4 border-dashed animate-spin mx-auto"></div> : <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mb-10">
+        {
+        services?.map((service) => (
           <ServiceCard key={service._id}  service={service}></ServiceCard>
-        ))}
+        ))
+        
+        }
       </div>
+      }
       <Link to="/allservices"><button className=" text-xl text-white  bg-cyan-500 px-10 py-3 ">See All <BsArrowRightCircle className="inline"></BsArrowRightCircle> </button></Link>
     </div>
   );
