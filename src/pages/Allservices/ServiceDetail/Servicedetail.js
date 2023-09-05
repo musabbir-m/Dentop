@@ -1,18 +1,89 @@
 import React, { useContext, useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
-import { Link, Navigate, useLoaderData, useLocation } from "react-router-dom";
+import {
+  Link,
+  Navigate,
+  json,
+  useLoaderData,
+  useLocation,
+} from "react-router-dom";
 import ReviewCard from "../../AddReview/ReviewCard/ReviewCard";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
+import BookingModal from "../../../Component/BookingModal/BookingModal";
+import { DayPicker } from "react-day-picker";
+import { format } from "date-fns";
+import "react-day-picker/dist/style.css";
 
 const Servicedetail = () => {
-  const service = useLoaderData();
-
-  const { name, img, description, _id } = service;
   const { user } = useContext(AuthContext);
+  console.log(user, "user");
+  const service = useLoaderData();
+  const { name, img, description, _id, price, slot } = service;
+
+  const [selectedDate, setSelectedDate] = useState(new Date());
+  const date = format(selectedDate, "PP");
+  console.log(date, "date");
+
+  const [loading, setLoading] = useState(false);
+  const [serviceLoading, setServiceLoading]= useState(true)
 
   const [acknowledged, setAcknowledged] = useState(false);
   const [reviews, setReviews] = useState("");
   console.log(reviews);
+
+
+  //laoding spinner state for service loading 
+
+  useEffect(
+   ()=>{ if(service){
+    setServiceLoading(false)
+  }}, [service]
+  )
+
+  //post booking
+  const postBooking = (event) => {
+    setLoading(true);
+    event.preventDefault();
+    const form = event.target;
+    const patientName = form.name.value;
+
+    const email = form.email.value;
+    const phone = form.phone.value;
+
+    const selectedSlot = form.slot.vlaue;
+
+    const serviceId = _id;
+    const treatment = name;
+
+    const bookingObject = {
+      patientName,
+      email,
+      phone,
+      appointmentdate: date,
+      selectedSlot,
+      serviceId,
+      treatment,
+    };
+
+    fetch("http://localhost:5000/appointment", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(bookingObject),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          toast("Successfully Booked");
+          setLoading(false);
+        } else {
+          toast.error(data.message);
+          setLoading(false);
+        }
+      });
+  };
 
   //load review
 
@@ -70,46 +141,128 @@ const Servicedetail = () => {
       .catch((err) => console.log(err));
   };
 
+  if(serviceLoading){
+    return <div className="w-10 h-10 border-t-4 border-blue-800 border-dashed animate-spin"></div>
+  }
   return (
     <div className="">
       {/* service details */}
       <div className=" px-4 py-6 bg-base-100 shadow-xl">
-        
-       <div className="flex flex-col lg:flex-row">
-          <div className="max-w-96">
-          <img className="w-full rounded-lg" src={img} alt="Album" />
+        <div className="flex flex-col lg:flex-row">
+          <div className="max-w-96 lg:w-2/4">
+            <img className="w-full rounded-lg" src={img} alt="Album" />
           </div>
-       
-          <div className="card-body px-6">
-            <h2 className="card-title text-emerald-400	">{name}</h2>
+
+          <div className=" px-6">
+            <h2 className=" text-emerald-400 text-2xl font-semibold 	">
+              {name}
+            </h2>
             <p>{description}</p>
-            <div className="card-actions justify-end">
-              <p className="font-bold ">
-                {" "}
-                <span className="text-purple-600">Level: </span> {}
-              </p>
-              <p className="font-bold">
-                {" "}
-                <span className="text-purple-600">Price:</span> $ {}
-              </p>
-            </div>
+
+            <p className="font-bold bg-gray-200 w-32 px-3 mt-5">
+              <span className="text-purple-600">Price:</span> $ {price}
+            </p>
           </div>
         </div>
+
         {/* show all review  */}
+
+        {/* Appointment Field */}
+
+        <div className="py-6 mt-8 flex flex-col lg:flex-row items-center justify-center">
+          <div>
+            <p className="text-center text-blue-800 text-xl font-semibold">Select Date for Appointment</p>
+            <DayPicker
+              className="mt-5"
+              selected={selectedDate}
+              onSelect={setSelectedDate}
+              mode="single"
+            />
+
+            <p className="text-center text-cyan-500 text-lg font-semibold">Selected Date {date}</p>
+          </div>
+
+          <div className="bg-white px-10 py-5">
+            <form
+              className="flex flex-col justify-center items-center"
+              onSubmit={postBooking}
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-3 gap-y-3">
+                <div className="flex flex-col justify-center items-center">
+                  <label htmlFor="slot">Slot</label>
+                  <select
+                    id="slot"
+                    name="slot"
+                    className="w-60 py-3 rounded-full  border-2 border-gray-200"
+                  >
+                    {slot.map((s) => (
+                      <option>{s}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="flex flex-col items-center justify-center">
+                  <label htmlFor="slot">Name</label>
+                  <input
+                    id="name"
+                    name="name"
+                    required
+                    className="w-60 py-3 rounded-full  border-2 border-gray-200"
+                    placeholder="Your Name"
+                    value={user?.displayName}
+                  />
+                </div>
+                <div className="flex flex-col items-center justify-center">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    id="email"
+                    name="email"
+                    required
+                    className="w-60 py-3 rounded-full  border-2 border-gray-200"
+                    placeholder="Your Email"
+                    value={user?.email}
+                  />
+                </div>
+
+                <div className="flex flex-col items-center justify-center">
+                  <label htmlFor="phone">Phone</label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    required
+                    className="w-60 py-3 rounded-full  border-2 border-gray-200"
+                    type="numeric"
+                    placeholder="Your Phone"
+                  />
+                </div>
+              </div>
+
+              <button
+                disabled={loading}
+                type="submit"
+                className=" h-10 w-40  bg-blue-800 hover:bg-cyan-500 transition-all duration-150  text-white rounded-full mt-3"
+              >
+                {loading && (
+                  <p className="w-8 h-8 border-t-4 border-blue-500 border-dashed border-solid rounded-full animate-spin"></p>
+                )}
+                Book 
+              </button>
+            </form>
+          </div>
+        </div>
 
         <div className="mt-10">
           {reviews ? (
-           <div>
-
-            <h2 className=" border-t-2 border-black text-2xl font-semibold uppercase text-cyan-500 text-center">
+            <div>
+              <h2 className=" border-t-2 border-gray-500 text-2xl font-semibold uppercase text-cyan-500 text-center">
                 Reviews
-            </h2>
-             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
-              {reviews?.map((review) => (
-                <ReviewCard key={review._id} review={review}></ReviewCard>
-              ))}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                {reviews?.map((review) => (
+                  <ReviewCard key={review._id} review={review}></ReviewCard>
+                ))}
+              </div>
             </div>
-           </div>
           ) : (
             <h2 className="text-2xl font-semibold mx-auto">No reviews Yet</h2>
           )}
@@ -121,7 +274,7 @@ const Servicedetail = () => {
                 <h2 className="text-3xl text-center">Add your review</h2>
                 {/* form to add review */}
                 <form action="" onSubmit={handleAddReview}>
-                  <div className="grid grid-cols-1 lg:grid-cols-3 mx-auto gap-3 mt-5">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto gap-3 mt-5">
                     <input
                       type="text"
                       name="email"
@@ -133,24 +286,24 @@ const Servicedetail = () => {
                       type="text"
                       placeholder="Your Name"
                       className="input input-info w-full input-bordered  "
-                      defaultValue=""
+                      defaultValue={user?.displayName}
                     />
-                    <input
+                    {/* <input
                       type="text"
                       name="photourl"
                       placeholder="photo url"
                       className="input input-info w-full input-bordered  "
                       defaultValue={user?.photoURL}
-                    />
+                    /> */}
                   </div>
 
                   <input
                     name="review"
-                    className=" mt-5 textarea textarea-info  w-full"
+                    className=" mt-5 textarea textarea-info h-20 w-full"
                     placeholder="Write review"
                   ></input>
                   <input
-                    className=" bg-cyan-400 px-4 py-3 text-white font-semibold text-xl border-none flex justify-center content-center mt-5 mx-auto"
+                    className="cursor-pointer bg-cyan-400 hover:bg-blue-800 transition duration-200 px-4 py-3 text-white font-semibold text-xl border-none flex justify-center content-center mt-5 mx-auto"
                     type="submit"
                     value="Submit review"
                   />

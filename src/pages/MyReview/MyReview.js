@@ -7,7 +7,7 @@ const MyReview = () => {
     const {user}= useContext(AuthContext)
     const email= user?.email 
 
-    const [myReviews, setMyreviews]= useState('')
+    const [myReviews, setMyreviews]= useState([])
     const [acknowledged, setAcknowledged]= useState(false)
     console.log(myReviews);
 
@@ -15,7 +15,7 @@ const MyReview = () => {
         fetch(`https://dentop-server.vercel.app/myreviews?email=${email}`)
           .then((res) => res.json())
           .then((data) => setMyreviews(data));
-      }, [email]);
+      }, [acknowledged]);
       
       //delete a review
       const handleDelete = (id) => {
@@ -59,10 +59,12 @@ const MyReview = () => {
           });
       };
 
+      
+
     return (
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-3 px-5 mt-5'>
+        <div className='h-screen grid grid-cols-1 lg:grid-cols-2 gap-3 px-5 mt-5 mx-auto'>
             {
-                myReviews? <>
+                myReviews.length? <>
                 {myReviews.map(review=> 
                 <MyReviewCard 
                 key={review._id}
@@ -73,7 +75,7 @@ const MyReview = () => {
 
                 ></MyReviewCard>)}
                 </>:
-           <h2> You haven't added any reviews yet</h2>
+           <h2 className='text-2xl font-semibold text-blue-800 text-center'> You haven't added any reviews yet</h2>
             
             }
         </div>

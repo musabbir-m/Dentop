@@ -48,17 +48,18 @@ const Login = () => {
         console.log(user);
         setSuccess(true)
         setError("")
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         setError(err);
       });}
 
   return (
-    <div className="flex flex-col md:flex-row justify-center mt-24 mb-10">
-      <div className="px-3">
+    <div className="flex flex-col md:flex-row justify-center items-center gap-x-6 mt-24 mb-10">
+      <div className="px-3 mt-10">
         {" "}
         <img
-          className="h-72"
+          className=""
           src="https://i.ibb.co/56xt5cF/Login-Dentop.jpg"
           alt=""
         />
@@ -114,11 +115,7 @@ const Login = () => {
               {" "}
               <FcGoogle className="inline"></FcGoogle> Google
             </button>
-            <button className="text-white font-bold px-3 py-2 rounded-sm bg-slate-600">
-              {" "}
-              <FaFacebook className="inline text-blue-900 bg-white"></FaFacebook>{" "}
-              Facebook
-            </button>
+            
           </div>
         </div>
       </div>

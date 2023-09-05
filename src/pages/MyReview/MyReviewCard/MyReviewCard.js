@@ -1,29 +1,27 @@
-import React from 'react';
+import React from "react";
 
-const MyReviewCard = ({review,  handleReviewUpdate, handleDelete, acknowledged}) => {
-   const {reviewText, serviceName, service, _id}= review
+const MyReviewCard = ({
+  review,
+  handleReviewUpdate,
+  handleDelete,
+  acknowledged,
+}) => {
+  const { reviewText, serviceName, service, _id } = review;
 
-   const updateReview = (event) => {
+  const updateReview = (event) => {
     event.preventDefault();
     const form = event.target;
     const text = form.text.value;
-    form.reset()
-
+    form.reset();
 
     handleReviewUpdate(_id, text);
 
-
-    
-    
-    if(acknowledged){
-        alert('success')
+    if (acknowledged) {
+      alert("success");
     }
-
-
-
   };
-    return (
-        <div className="card bg-base-100 shadow-xl">
+  return (
+    <div className="card bg-base-100 shadow-xl">
       <div className="card-body">
         <h2 className="card-title">{serviceName}</h2>
         <p> {reviewText}</p>
@@ -44,8 +42,6 @@ const MyReviewCard = ({review,  handleReviewUpdate, handleDelete, acknowledged})
         </div>
 
         <div className="card-actions align-bottom justify-end">
-          
-
           {/* The button to open modal */}
           <label htmlFor="my-modal-6" className="btn btn-accent btn-xs">
             update
@@ -56,9 +52,16 @@ const MyReviewCard = ({review,  handleReviewUpdate, handleDelete, acknowledged})
           <div className="modal modal-bottom sm:modal-middle">
             <div className="modal-box">
               <h3 className="font-bold text-lg">{serviceName}</h3>
-              <form className="flex justify-between"  onSubmit={updateReview}  action="">
-                
-                <textarea name="text" className="textarea w-48 textarea-success" placeholder="update review"></textarea>
+              <form
+                className="flex justify-between"
+                onSubmit={updateReview}
+                action=""
+              >
+                <textarea
+                  name="text"
+                  className="textarea w-48 textarea-success"
+                  placeholder="update review"
+                ></textarea>
                 <input type="submit" className="btn btn-xs" value="Update" />
               </form>
               <div className="modal-action">
@@ -81,7 +84,7 @@ const MyReviewCard = ({review,  handleReviewUpdate, handleDelete, acknowledged})
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default MyReviewCard;

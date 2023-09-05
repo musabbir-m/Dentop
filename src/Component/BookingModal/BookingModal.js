@@ -1,13 +1,21 @@
 import { format } from "date-fns";
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
 import toast from "react-hot-toast";
 
-const BookingModal = ({treatmentName,selectedDate, setTreatment, refetch}) => {
+const BookingModal = ({treatmentName,selectedDate, id}) => {
     const { user } = useContext(AuthContext);
-
-    const { name, slots, price } = treatmentName; //treatment is appointment options just different names
     const date = format(selectedDate, "PP");
+    const [slots, setSlots]= useState([])
+    //fetching availale slots for a service
+    // useEffect(()=>{
+    //   fetch(`http://loacalhost:5000/service/${id}?date=${date}`)
+    //   .then(res=>res.json())
+    //   .then(data=> setSlots(data.slots))
+    // },[])
+
+    // const { name, slots, price } = treatmentName; //treatment is appointment options just different names
+    
   
     const handleBooking = (event) => {
       event.preventDefault();
@@ -19,12 +27,12 @@ const BookingModal = ({treatmentName,selectedDate, setTreatment, refetch}) => {
       console.log(slot);
       const booking = {
         appointmentDate: date,
-        treatment: name,
+       
         patientName,
         slot,
         email,
         phone,
-        price
+        
       };
       console.log(booking);
       
@@ -38,14 +46,14 @@ const BookingModal = ({treatmentName,selectedDate, setTreatment, refetch}) => {
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-          setTreatment(null)
+          // setTreatment(null)
           
           if(data.acknowledged){
             
             toast('Booking confirmed')
             
-           refetch()
-           setTreatment(null)
+          //  refetch()
+          //  setTreatment(null)
           }
           else{
               toast.error(data.message)
@@ -54,6 +62,10 @@ const BookingModal = ({treatmentName,selectedDate, setTreatment, refetch}) => {
         });
   
     };
+
+    // if(slots.length===0){
+    //   return <p>..Loading</p>
+    // }
     return (
       <>
         <input type="checkbox" id="booking-modal" className="modal-toggle" />
@@ -65,7 +77,7 @@ const BookingModal = ({treatmentName,selectedDate, setTreatment, refetch}) => {
             >
               ✕
             </label>
-            <h3 className="text-lg font-bold">{name}</h3>
+            {/* <h3 className="text-lg font-bold">{name}</h3> */}
   
             <form
               onSubmit={handleBooking}
@@ -79,11 +91,11 @@ const BookingModal = ({treatmentName,selectedDate, setTreatment, refetch}) => {
               />
   
               <select name="slot" className="select select-bordered w-full">
-                {slots.map((slot, i) => (
+                {/* {slots.map((slot, i) => (
                   <option key={i} value={slot}>
                     {slot}{" "}
                   </option>
-                ))}
+                ))} */}
               </select>
   
               <input
