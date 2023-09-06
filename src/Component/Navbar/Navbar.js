@@ -76,11 +76,11 @@ const Navbar = () => {
               </li>
               <li>
                 <Link to="/dashboard" className="text-blue-500 ">
-                  Dashboard
+                  My Appointment
                 </Link>
               </li>
               <li>
-                <Link className="font-semibold" to="/myreview">
+                <Link className="text-blue-500" to="/myreview">
                   My review
                 </Link>
               </li>

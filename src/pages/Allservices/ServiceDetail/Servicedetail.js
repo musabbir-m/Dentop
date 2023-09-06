@@ -7,7 +7,7 @@ import {
   useLoaderData,
   useLocation,
 } from "react-router-dom";
-import ReviewCard from "../../AddReview/ReviewCard/ReviewCard";
+import ReviewCard from "../ReviewCard/ReviewCard";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
 import BookingModal from "../../../Component/BookingModal/BookingModal";
 import { DayPicker } from "react-day-picker";
