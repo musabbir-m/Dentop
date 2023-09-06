@@ -25,20 +25,19 @@ const Servicedetail = () => {
   console.log(date, "date");
 
   const [loading, setLoading] = useState(false);
-  const [serviceLoading, setServiceLoading]= useState(true)
+  const [serviceLoading, setServiceLoading] = useState(true);
 
   const [acknowledged, setAcknowledged] = useState(false);
   const [reviews, setReviews] = useState("");
   console.log(reviews);
 
+  //laoding spinner state for service loading
 
-  //laoding spinner state for service loading 
-
-  useEffect(
-   ()=>{ if(service){
-    setServiceLoading(false)
-  }}, [service]
-  )
+  useEffect(() => {
+    if (service) {
+      setServiceLoading(false);
+    }
+  }, [service]);
 
   //post booking
   const postBooking = (event) => {
@@ -100,7 +99,6 @@ const Servicedetail = () => {
   const handleAddReview = (event) => {
     event.preventDefault();
     const form = event.target;
-    const customerName = form.name.value;
     const email = user?.email;
     const photoURL = user?.photoURL;
     const reviewText = form.review.value;
@@ -108,14 +106,14 @@ const Servicedetail = () => {
     const reviewObject = {
       service: _id,
       serviceName: name,
-      customer: customerName,
+      customer: user?.displayName,
       email,
       reviewText,
       photoURL,
     };
 
     fetch(
-      "https://dentop-server.vercel.app/review",
+      "http://localhost:5000/review",
 
       {
         method: "POST",
@@ -136,13 +134,17 @@ const Servicedetail = () => {
           fetch(`https://dentop-server.vercel.app/reviews?name=${name}`)
             .then((res) => res.json())
             .then((data) => setReviews(data));
+        } else {
+          toast.error(data.message);
         }
       })
       .catch((err) => console.log(err));
   };
 
-  if(serviceLoading){
-    return <div className="w-10 h-10 border-t-4 border-blue-800 border-dashed animate-spin"></div>
+  if (serviceLoading) {
+    return (
+      <div className="w-10 h-10 border-t-4 rounded-full mx-auto  border-blue-800 border-dashed animate-spin"></div>
+    );
   }
   return (
     <div className="">
@@ -171,7 +173,9 @@ const Servicedetail = () => {
 
         <div className="py-6 mt-8 flex flex-col lg:flex-row items-center justify-center">
           <div>
-            <p className="text-center text-blue-800 text-xl font-semibold">Select Date for Appointment</p>
+            <p className="text-center text-blue-800 text-xl font-semibold">
+              Select Date for Appointment
+            </p>
             <DayPicker
               className="mt-5"
               selected={selectedDate}
@@ -179,7 +183,9 @@ const Servicedetail = () => {
               mode="single"
             />
 
-            <p className="text-center text-cyan-500 text-lg font-semibold">Selected Date {date}</p>
+            <p className="text-center text-cyan-500 text-lg font-semibold">
+              Selected Date {date}
+            </p>
           </div>
 
           <div className="bg-white px-10 py-5">
@@ -245,7 +251,7 @@ const Servicedetail = () => {
                 {loading && (
                   <p className="w-8 h-8 border-t-4 border-blue-500 border-dashed border-solid rounded-full animate-spin"></p>
                 )}
-                Book 
+                Book
               </button>
             </form>
           </div>
@@ -275,7 +281,7 @@ const Servicedetail = () => {
                 {/* form to add review */}
                 <form action="" onSubmit={handleAddReview}>
                   <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto gap-3 mt-5">
-                    <input
+                    {/* <input
                       type="text"
                       name="email"
                       placeholder="Your Email"
@@ -287,7 +293,7 @@ const Servicedetail = () => {
                       placeholder="Your Name"
                       className="input input-info w-full input-bordered  "
                       defaultValue={user?.displayName}
-                    />
+                    /> */}
                     {/* <input
                       type="text"
                       name="photourl"

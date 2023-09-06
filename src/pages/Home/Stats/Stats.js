@@ -19,7 +19,7 @@ const Stats = () => {
         start:90,
         end: 100,
         enableScrollSpy: true,
-        scrollSpyDelay: 500,
+        scrollSpyDelay: 300,
     })
 
     useCountUp({
@@ -27,7 +27,7 @@ const Stats = () => {
         start:950,
         end: 1000,
         enableScrollSpy: true,
-        scrollSpyDelay: 1000,
+        scrollSpyDelay: 500,
     })
 
 

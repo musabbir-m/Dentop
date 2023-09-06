@@ -9,7 +9,7 @@ import routes from './Routes/Routes';
 
 function App() {
   return (
-    <div className="mx-auto bg-gray-300 w-full h-screen">
+    <div className="mx-auto bg-gray-300 w-full h-full">
      <RouterProvider router={routes}></RouterProvider>
      <Toaster/>
     </div>

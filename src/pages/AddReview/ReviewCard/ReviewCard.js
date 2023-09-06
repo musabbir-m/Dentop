@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ReviewCard = ({review}) => {
+const   ReviewCard = ({review}) => {
 
     const {serviceName, photoURL, reviewText, customer}= review
     return (
