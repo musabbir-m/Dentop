@@ -6,13 +6,22 @@ import Home from './pages/Home/Home';
 import { RouterProvider } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import routes from './Routes/Routes';
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+
+const queryClient= new QueryClient()
+
 
 function App() {
   return (
-    <div className="mx-auto bg-gray-300 w-full h-full">
+    <QueryClientProvider client={queryClient}>
+      <div className="mx-auto bg-gray-300 w-full h-full">
      <RouterProvider router={routes}></RouterProvider>
      <Toaster/>
     </div>
+    </QueryClientProvider>
   );
 }
 

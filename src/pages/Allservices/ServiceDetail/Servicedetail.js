@@ -49,10 +49,11 @@ const Servicedetail = () => {
     const email = form.email.value;
     const phone = form.phone.value;
 
-    const selectedSlot = form.slot.vlaue;
+    const selectedSlot = form.slot.value;
 
     const serviceId = _id;
     const treatment = name;
+    
 
     const bookingObject = {
       patientName,
@@ -62,6 +63,8 @@ const Servicedetail = () => {
       selectedSlot,
       serviceId,
       treatment,
+      img,
+      price
     };
 
     fetch("http://localhost:5000/appointment", {
@@ -200,6 +203,7 @@ const Servicedetail = () => {
                     id="slot"
                     name="slot"
                     className="w-60 py-3 rounded-full  border-2 border-gray-200"
+                    required
                   >
                     {slot.map((s) => (
                       <option>{s}</option>

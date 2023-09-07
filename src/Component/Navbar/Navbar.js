@@ -75,7 +75,7 @@ const Navbar = () => {
                 </button>
               </li>
               <li>
-                <Link to="/dashboard" className="text-blue-500 ">
+                <Link to="/myappointment" className="text-blue-500 ">
                   My Appointment
                 </Link>
               </li>
