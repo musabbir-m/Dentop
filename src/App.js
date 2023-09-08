@@ -17,7 +17,23 @@ const queryClient= new QueryClient()
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <div className="mx-auto bg-gray-300 w-full h-full">
+      <div className="gradient-background mx-auto w-full h-full"
+      style={{
+        background: "linear-gradient(to right, #363795, #005C97)",
+        /* Fallback for old browsers */
+        background: "#005C97",
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: "-webkit-linear-gradient(to right, #363795, #005C97)",
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      }}
+      
+      
+      
+      
+      
+      
+      
+      >
      <RouterProvider router={routes}></RouterProvider>
      <Toaster/>
     </div>

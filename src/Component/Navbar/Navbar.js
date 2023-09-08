@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
+import './Navbar.css'
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -98,7 +99,7 @@ const Navbar = () => {
     </React.Fragment>
   );
   return (
-    <div className="navbar py-4 h-20 bg-base-100 shadow-md">
+    <div className="navbar  py-4 h-20 shadow-md bg-gradient-to-r from-blue-800 to-cyan-600 text-white">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

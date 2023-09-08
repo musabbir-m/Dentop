@@ -21,7 +21,7 @@ const [services, setServices] = useState([]);
   return (
     <div className='flex bg-gray-100 flex-col py-10 lg:flex-row'>
         
-        <div className='lg:w-2/4 px-6 pt-6 lg:pt-28 '>
+        <div className='lg:w-2/4 px-6 py-5 pt-6 lg:pt-28 '>
             <p className='text-cyan-400 text-xl italic'>Dental Care and Guidlines for You</p>
             <h2 className='text-2xl lg:text-4xl font-semibold my-4'>We Are Here To Support You</h2>
             <p className='text-gray-500'>Proactively revolutionize granular customer service after pandemic internal or "organic" sources. 
@@ -56,7 +56,7 @@ const [services, setServices] = useState([]);
 
         <div className='lg:w-2/4 shadow-lg shadow-gray-300'>
             <div className='bg-blue-900  py-10 flex items-center justify-around'>
-                <div className='text-white'><h2 className='text-3xl'>Book an appointment</h2>
+                <div className='text-white'><h2 className='text-3xl'>Book 15 min free consultation</h2>
                 <p>Please call us to ensure</p>
                 <p>Tel: +99090945</p>
                 </div>
@@ -76,7 +76,7 @@ const [services, setServices] = useState([]);
                         )))
                     }
                   </select>
-                  <select className='w-60 py-3 rounded-full  border-2 border-gray-200'>
+                  <select name='doctor' className='w-60 py-3 rounded-full  border-2 border-gray-200'>
                      <option>Farhan Hasan</option>
                      <option> John Smith</option>
                      <option>David Lamot</option>
