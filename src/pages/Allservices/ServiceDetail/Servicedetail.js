@@ -250,10 +250,10 @@ const Servicedetail = () => {
               <button
                 disabled={loading}
                 type="submit"
-                className=" h-10 w-40  bg-blue-800 hover:bg-cyan-500 transition-all duration-150  text-white rounded-full mt-3"
+                className=" h-10 w-40  bg-blue-800 hover:bg-cyan-500 transition-all duration-150  text-white rounded-full mt-3 flex justify-center  items-center gap-x-2"
               >
                 {loading && (
-                  <p className="w-8 h-8 border-t-4 border-blue-500 border-dashed border-solid rounded-full animate-spin"></p>
+                  <p className="w-8 h-8 border-t-4 border-blue-500 border-dashed  rounded-full animate-spin"></p>
                 )}
                 Book
               </button>
