@@ -56,12 +56,14 @@ const BookAppointment = () => {
     const name = form.name.value;
     const email = form.email.value;
     const slot = form.slot.value;
+    const phone= form.phone.value
 
     const appointment = {
       date: formattedDate,
       name,
       email,
       slot,
+      phone
     };
     fetch("http://localhost:5000/consultation", {
       method: "POST",
