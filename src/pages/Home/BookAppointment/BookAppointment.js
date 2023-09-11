@@ -65,7 +65,7 @@ const BookAppointment = () => {
       slot,
       phone
     };
-    fetch("http://localhost:5000/consultation", {
+    fetch("https://dentop-server.vercel.app/consultation", {
       method: "POST",
       headers: {
         "content-type": "application/json",

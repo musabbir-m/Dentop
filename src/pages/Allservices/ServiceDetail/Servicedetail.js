@@ -53,7 +53,6 @@ const Servicedetail = () => {
 
     const serviceId = _id;
     const treatment = name;
-    
 
     const bookingObject = {
       patientName,
@@ -64,10 +63,10 @@ const Servicedetail = () => {
       serviceId,
       treatment,
       img,
-      price
+      price,
     };
 
-    fetch("http://localhost:5000/appointment", {
+    fetch("https://dentop-server.vercel.app/appointment", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -116,7 +115,7 @@ const Servicedetail = () => {
     };
 
     fetch(
-      "http://localhost:5000/review",
+      "https://dentop-server.vercel.app/review",
 
       {
         method: "POST",
