@@ -16,7 +16,7 @@ const Carousel = () => {
     slidesToShow: 1,
 
     autoplay: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 2100,
     pauseOnHover: false,
 
     prevArrow:null,
@@ -51,7 +51,7 @@ const Carousel = () => {
     ],
   };
   return (    
-    <div className=" ">
+    <div className="w-full">
       <Slider {...settings} className="overflow-hidden">
         <CarouselItem/>
         <CarouselItem2/>

@@ -62,7 +62,7 @@ const Testimonial = () => {
           className="flex justify-center  items-center  py-5 overflow-hidden"
           {...settings}
         >
-          <div className="relative max-w-[400px] mx-4 py-5  px-4 h-60  bg-gray-100 rounded-3xl">
+          <div className="relative max-w-[400px] mx-4 py-5  px-4 h-60  bg-white rounded-3xl">
             <p className="h-24">
               Exceptional care and professionalism at Dentop! My family and I
               have found our dental home. Thank you for the great service
@@ -91,7 +91,7 @@ const Testimonial = () => {
             </div>
           </div>
 
-          <div className="relative max-w-[400px] mx-4 py-5  px-4 h-60  bg-gray-100 rounded-3xl">
+          <div className="relative max-w-[400px] mx-4 py-5  px-4 h-60  bg-white rounded-3xl">
             <p className="h-24">
               Dentop's advanced technology and skilled dentists put me at ease.
               Pain-free procedures and a bright smile—what more could I ask for?
@@ -120,7 +120,7 @@ const Testimonial = () => {
             </div>
           </div>
 
-          <div className="relative max-w-[400px] mx-4 py-5  px-4 h-60  bg-gray-100 rounded-3xl">
+          <div className="relative max-w-[400px] mx-4 py-5  px-4 h-60  bg-white rounded-3xl">
             <p className="h-24">
               Dentop's attention to detail is impressive. I received
               personalized treatment that exceeded my expectations. Truly a
@@ -150,7 +150,7 @@ const Testimonial = () => {
             </div>
           </div>
 
-          <div className="relative max-w-[400px] mx-4 py-5  px-4 h-60  bg-gray-100 rounded-3xl">
+          <div className="relative max-w-[400px] mx-4 py-5  px-4 h-60  bg-white rounded-3xl">
             <p className="h-24">
               Dentop transformed my smile! The team's expertise and friendly
               approach made my dental experience enjoyable. I highly recommend

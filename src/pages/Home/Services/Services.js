@@ -32,7 +32,7 @@ const Services = () => {
         }
       </div>
       }
-      <Link to="/allservices"><button className=" text-xl text-white  bg-cyan-500 px-10 py-3 ">See All <BsArrowRightCircle className="inline"></BsArrowRightCircle> </button></Link>
+      <Link to="/allservices"><button className=" text-xl text-white  bg-cyan-500 px-10 py-3 hover:bg-blue-800 transition-all duration-200">See All <BsArrowRightCircle className="inline"></BsArrowRightCircle> </button></Link>
     </div>
   );
 };
