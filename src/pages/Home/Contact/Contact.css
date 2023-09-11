@@ -1,0 +1,18 @@
+
+
+.parallax {
+    /* Set the background image and initial position */
+    background-image: url('https://i.ibb.co/QDpPSPj/dentist-with-smile.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 450px; /* Adjust as needed */
+    
+   
+  }
+
+  .contact{
+    background-color: rgba(18, 81, 177, 0.5);
+    height: 450px;
+    width: 100%;
+  }
