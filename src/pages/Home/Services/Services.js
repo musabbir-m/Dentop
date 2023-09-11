@@ -14,10 +14,10 @@ const Services = () => {
       });
   }, []);
   return (
-    <div className="text-center mb-48">
-      <h3 className="text-2xl text-cyan-400">Our Services</h3>
-      <h2 className="text-3xl md:text-4xl font-semibold">
-        Providing Medical Care For <br /> The Sickest In Our Community.
+    <div className="text-center mb-40">
+      <h3 className="text-3xl font-bold text-white">Our Services</h3>
+      <h2 className="pb-8 text-3xl md:text-4xl font-semibold text-blue-800">
+        Providing Dental Care For <br /> The Sickest In Our Community.
       </h2>
 
       

@@ -6,13 +6,12 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    height: 450px; /* Adjust as needed */
+   
     
    
   }
 
   .contact{
     background-color: rgba(18, 81, 177, 0.5);
-    height: 450px;
     width: 100%;
   }

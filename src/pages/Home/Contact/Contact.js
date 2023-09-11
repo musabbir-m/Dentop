@@ -4,8 +4,8 @@ import { BsTelephone } from "react-icons/bs";
 
 const Contact = () => {
   return (
-    <div className="parallax h-96 ">
-      <div className="contact py-10 px-5">
+    <div className="parallax h-[700px] md:h-[500px] ">
+      <div className="contact h-[700px] md:h-[500px] py-10 px-5">
         <div className="flex justify-center items-center flex-col py-5">
           <h2 className="text-white text-4xl font-semibold text-center pt-5 pb-2">
             CONTACT US

@@ -4,25 +4,25 @@ import { TbHeartHandshake } from "react-icons/tb";
 
 const Activities = () => {
   return (
-    <div className="{-mt-10}   lg:flex justify-around  mb-32 bg-slate-100 mx-10 shadow-md rounded-md ">
-      <div className=" overflow-hidden  pt-12 ">
+    <div className="py-6 mx-0 lg:mx-10 mb-24 flex flex-col lg:flex-row justify-center items-center lg:justify-around  bg-slate-100  shadow-md rounded-md ">
+      <div className=" overflow-hidden w-2/4   ">
         <img
-          className=" max-h-[500px] w-auto"
+          className=" w-full"
           height=""
-          src="https://i.ibb.co/55SFS7Y/Dentist-1.jpg"
+          src="https://i.ibb.co/CvZgB5t/dentist.jpg"
           alt=""
         />
       </div>
 
       <div className="pt-10 px-5 mx-2">
         <h3 className="text-xl font-semibold text-cyan-400">WHAT WE DO</h3>
-        <h2 className="text-3xl md:text-4xl font-semibold mt-5">
+        <h2 className="text-3xl md:text-4xl text-blue-800 font-semibold mt-5">
           True Healthcare For <br />
           Your Family
         </h2>
 
         <div>
-          <div className="mt-10 flex justify-around">
+          <div className="mt-10 flex justify-between gap-x-7">
             <div>
               <RiRemoteControl2Fill className="text-6xl my-3"></RiRemoteControl2Fill>
 
@@ -34,6 +34,7 @@ const Activities = () => {
                 <br />
               </p>
             </div>
+            
             <div>
               <TbHeartHandshake className="text-6xl my-3"></TbHeartHandshake>
 
@@ -46,7 +47,7 @@ const Activities = () => {
               </p>
             </div>
           </div>
-          <button className=" mx-auto mt-5 mb-5 bg-cyan-400 rounded-md px-4 py-4 text-xl font-semibold text-white" >Get Appointment</button>
+          
         </div>
       </div>
     </div>

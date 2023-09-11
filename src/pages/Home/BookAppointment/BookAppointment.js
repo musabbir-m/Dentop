@@ -86,9 +86,9 @@ const BookAppointment = () => {
   };
 
   return (
-    <div className="flex bg-gray-100 flex-col py-10 lg:flex-row">
+    <div className="flex bg-gray-100 flex-col pt-10 pb-20  lg:flex-row">
       <div className="lg:w-2/4 px-6 py-5 pt-6 lg:pt-28 ">
-        <p className="text-cyan-400 text-xl italic">
+        <p className="text-cyan-400 text-xl font-semibold italic">
           Dental Care and Guidlines for You
         </p>
         <h2 className="text-2xl lg:text-4xl font-semibold my-4">
@@ -123,9 +123,9 @@ const BookAppointment = () => {
           </div>
         </div>
 
-        <button className="px-4 py-2 bg-blue-800 hover:bg-cyan-500 transition-all duration-150 rounded-full text-white">
+        {/* <button className="px-4 py-2 bg-blue-800 hover:bg-cyan-500 transition-all duration-150 rounded-full text-white">
           Get More Info
-        </button>
+        </button> */}
       </div>
 
       <div className="lg:w-2/4 shadow-lg shadow-gray-300">

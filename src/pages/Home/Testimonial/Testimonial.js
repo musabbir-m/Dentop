@@ -52,7 +52,7 @@ const Testimonial = () => {
   return (
     <div className="mx-auto py-5 lg:py-16">
       <div className="flex flex-col justify-center items-center py-10">
-        <p className="text-cyan-400 text-lg font-semibold italic">Testimonial</p>
+        <p className="text-white  text-xl font-semibold italic">Testimonial</p>
         <h2 className="text-2xl md:text-3xl font-semibold text-blue-600">Our Patients Say</h2>
         <p>We are happy to share some of our patients feedback. </p>
       </div>

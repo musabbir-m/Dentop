@@ -99,10 +99,10 @@ const Navbar = () => {
     </React.Fragment>
   );
   return (
-    <div className="navbar  py-4 h-20 shadow-md bg-gradient-to-r from-blue-800 to-cyan-600 text-white">
+    <div className="navbar  py-4 h-20 shadow-md bg-gradient-to-r from-blue-800 to-cyan-600">
       <div className="navbar-start">
-        <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
+        <div className="dropdown text-blue-800">
+          <label tabIndex={0} className="btn btn-ghost text-black lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -136,11 +136,11 @@ const Navbar = () => {
           </ul>
         </div>
         <img className="rounded-full" src="logo.jpg" width="50px" alt="logo" />
-        <Link className=" normal-case text-xl italic font-mono " to="/">
+        <Link className=" normal-case text-xl italic font-mono text-white " to="/">
           Dentop
         </Link>
       </div>
-      <div className="navbar-end hidden lg:flex">
+      <div className="navbar-end hidden lg:flex text-white">
         <ul className="menu  menu-horizontal px-1">{navItem}</ul>
       </div>
       <div className="navbar-en  "></div>
