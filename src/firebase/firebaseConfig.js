@@ -1,6 +1,3 @@
-
-
-
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
@@ -8,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBGAhBIAmo49RRAkpVVzYyZ59-q2PJKqlw",
-  authDomain: "dentop-1.firebaseapp.com",
-  projectId: "dentop-1",
-  storageBucket: "dentop-1.appspot.com",
-  messagingSenderId: "268083116496",
-  appId: "1:268083116496:web:e3f46b03381f17fe12a1d5"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 };
 
 // Initialize Firebase
